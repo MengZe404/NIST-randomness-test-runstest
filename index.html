@@ -8,14 +8,7 @@
   <link rel="stylesheet" href="./style.css">
   <style>
     #history {
-      margin: auto; display: flex; align-items: center; border: none; 
-    }
-  
-    @media only screen and (max-width: 600px) {
-        #history {
-            background-color: aqua;
-            visibility: hidden;
-        }
+      margin: 0px; padding: 0px;
     }
   </style>
 </head>
@@ -25,7 +18,7 @@
 <form class="cf">
   <div class="cf">
     <textarea name="message" type="text" id="input" placeholder="10110110101 ... (25 digits)" 
-    onkeyup="updateCount()"></textarea>
+    onkeyup="updateCount()" maxlength="25"></textarea>
   </div>  
 
   <div class="half left cf">
@@ -42,11 +35,12 @@
   <input type="text" id="result" placeholder="Result">
 </form>
 
-<div class="container list-group history" id="history">
+<div class="list-group" id="history">
   <div class="col-6">
     <ul id="list">
       <div style="display: flex;">
-        <button type="button" class="list-group-item list-group-item-action p-3">Sequence</button><button type="button" class="list-group-item list-group-item-action p-3"> p-value </button>
+        <button type="button" class="list-group-item list-group-item-action p-3" style="min-width: 46vw;">Sequence</button>
+        <button type="button" class="list-group-item list-group-item-action p-3" style="min-width: 46vw;"> p-value </button>
       </div>
     </ul>
   </div>
