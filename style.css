@@ -92,3 +92,11 @@ form textarea {
 .cf:after {
   clear: both;
 }
+
+.logo {
+  position: absolute;
+  width: 15vw;
+  right: 3vw;
+  top: 2vh;
+  
+}

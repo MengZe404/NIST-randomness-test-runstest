@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/x-icon" href="logo.jpg">
   <style>
     #history {
       margin: 0px; padding: 0px;
@@ -14,11 +15,14 @@
 </head>
 
 <body>
+<a href="https://www.nottingham.edu.my/"> <img src="full-logo.jpg" class="logo"> </a> 
 <h1>2023 STEM Carnival, University of Nottingham Malaysia</h1>
+<br>
+<h1> Can you deceive a computer? </h1>
 <form class="cf">
   <div class="cf">
     <textarea name="message" type="text" id="input" placeholder="10110110101 ... (25 digits)" 
-    onkeyup="updateCount()" maxlength="25"></textarea>
+    onkeyup="updateCount()" maxlength="25" minlength="25"></textarea>
   </div>  
 
   <div class="half left cf">
@@ -31,16 +35,16 @@
 
   <input value="Test" type="button" id="input-submit" onclick="runsTest()">
   <br> <br>
-  <h3> Result (p-value): </h3>
-  <input type="text" id="result" placeholder="Result">
+  <h3> Result (randomness): </h3>
+  <input type="text" id="result" placeholder="Result" readonly>
 </form>
 
 <div class="list-group" id="history">
   <div class="col-6">
     <ul id="list">
       <div style="display: flex;">
-        <button type="button" class="list-group-item list-group-item-action p-3" style="min-width: 46vw;">Sequence</button>
-        <button type="button" class="list-group-item list-group-item-action p-3" style="min-width: 46vw;"> p-value </button>
+        <button type="button" class="list-group-item list-group-item-action p-3" style="min-width: 46vw; left: 4vw;">Sequence</button>
+        <button type="button" class="list-group-item list-group-item-action p-3" style="min-width: 46vw; right: 4vw"> p-value </button>
       </div>
     </ul>
   </div>
