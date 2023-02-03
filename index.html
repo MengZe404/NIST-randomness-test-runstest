@@ -5,8 +5,9 @@
   <title>2023 STEM Carnival, University of Nottingham Malaysia</title>
   <link rel="stylesheet" href="./bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="icon" type="image/x-icon" href="logo.jpg">
+  <link rel="stylesheet" href="./assets/styles/style.css">
+  <link rel="stylesheet" href="./assets/styles/index.css">
+  <link rel="icon" type="image/x-icon" href="./assets/logo.jpg">
   <style>
     #history {
       margin: 0px; padding: 0px;
@@ -15,14 +16,14 @@
 </head>
 
 <body>
-<a href="https://www.nottingham.edu.my/"> <img src="full-logo.jpg" class="logo"> </a> 
+<a href="https://www.nottingham.edu.my/"> <img src="./assets/full-logo.jpg" class="logo"> </a> 
 <h1>2023 STEM Carnival, University of Nottingham Malaysia</h1>
 <br>
 <h1> Can you deceive a computer? </h1>
 <form class="cf">
   <div class="cf">
     <textarea name="message" type="text" id="input" placeholder="10110110101 ... (25 digits)" 
-    onkeyup="updateCount()" maxlength="25" minlength="25"></textarea>
+    onkeyup="updateCount()" minlength="25" maxlength="25"></textarea>
   </div>  
 
   <div class="half left cf">
@@ -35,8 +36,23 @@
 
   <input value="Test" type="button" id="input-submit" onclick="runsTest()">
   <br> <br>
-  <h3> Result (randomness): </h3>
-  <input type="text" id="result" placeholder="Result" readonly>
+
+  <h3> Result </h3>
+
+  <br>
+
+  <div class="half left cf">
+    <h3> Runs Test </h3>
+    <input type="text" id="runsP" value="0" readonly>
+  </div>
+
+  <div class="half right cf">
+    <h3> Frequency Test </h3>
+    <input type="text" id="freqP" value="0" readonly>
+  </div>
+
+  <input type="text" id="DFTP" placeholder="Discrete Fourier Transform (Spectral) Test" readonly>
+
 </form>
 
 <div class="list-group" id="history">
@@ -52,7 +68,9 @@
 
 </body>
 
-<script src="math.min.js"></script>
-<script src="jquery.min.js"></script>
-<script src="index.js"></script>
+<script src="./assets/scripts/libraries/jquery.min.js"></script>
+<script src="./assets/scripts/libraries/math.min.js"></script>
+<script src="./assets/scripts/libraries/fourier.min.js"></script>
+<script src="./assets/scripts/nist.js"></script>
+<script src="./assets/scripts/index.js"></script>
 </html>
