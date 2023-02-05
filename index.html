@@ -5,7 +5,6 @@
   <title>2023 STEM Carnival, University of Nottingham Malaysia</title>
   <link rel="stylesheet" href="./bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="./assets/styles/style.css">
   <link rel="stylesheet" href="./assets/styles/index.css">
   <link rel="icon" type="image/x-icon" href="./assets/logo.jpg">
   <style>
@@ -23,7 +22,7 @@
 <form class="cf">
   <div class="cf">
     <textarea name="message" type="text" id="input" placeholder="10110110101 ... (25 digits)" 
-    onkeyup="updateCount()" minlength="25" maxlength="25"></textarea>
+    onkeyup="updateCount()" minlength="30" maxlength="30"></textarea>
   </div>  
 
   <div class="half left cf">
@@ -34,7 +33,7 @@
     <input type="text" id="count01" value="no. ones = 0     no. zeros = 0" readonly>
   </div>
 
-  <input value="Test" type="button" id="input-submit" onclick="runsTest()">
+  <input value="Test" type="button" id="input-submit" onclick="runTest()">
   <br> <br>
 
   <h3> Result </h3>

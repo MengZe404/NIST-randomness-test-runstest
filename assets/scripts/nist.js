@@ -22,6 +22,10 @@ class NIST {
     }
 
     runsTest() {
+        if (this.freqTest() < 0.01) {
+            return 0;
+        }
+            
         var pi = this.bits.reduce((a, b) => a + b) / this.n;
 
         var r = (_, k) => this.bits[k] == this.bits[k+1]? 0: 1;
@@ -45,8 +49,9 @@ class NIST {
         var S = fourier.dft(this.bits.map(element => element === 0 ? -1 : element), Array.from({ length: this.n }, () => 0));
 
         var M = [];
-
-        for (var i = 0; i < this.n / 2; i++) {
+        
+        // only take the quotient of the division
+        for (var i = 0; i < ~~(this.n / 2); i++) {
             var real = S[0][i];
             var img = S[1][i];
 
@@ -55,7 +60,7 @@ class NIST {
         
         var T = Math.sqrt(Math.log(20)*this.n);
 
-        var N0 = 0.95 * this.n / 2;
+        var N0 = 0.95 * ~~(this.n / 2);
 
         var N1 = 0;
 

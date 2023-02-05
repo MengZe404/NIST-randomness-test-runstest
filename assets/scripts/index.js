@@ -3,14 +3,14 @@ function erfc (x){
     return 1 - math.erf(x);
 };
 
-function runsTest(){
+function runTest(){
     // pre: bits should be an array containing only 0 and 1 as a number
 	input = document.getElementById("input").value
 
 	let test = new NIST(input);
 
-	if (test.n != 25) {
-		alert("Error: input must have 25 digits");
+	if (test.n != 30) {
+		alert("Error: input must have 30 digits");
 		return 0;
 	}
 	
@@ -20,7 +20,7 @@ function runsTest(){
 
 	document.getElementById("runsP").value = runsP
 	document.getElementById("freqP").value = freqP;
-	document.getElementById("DFTP").value = "DFT Test: " + DFTP;
+	document.getElementById("DFTP").value = DFTP;
 
 	var div = document.createElement("div")
 	div.setAttribute("style", "display: flex; justify-content: space-between;")
@@ -57,5 +57,13 @@ function updateCount() {
 	document.getElementById('count').value = "n = " + counts;
 	document.getElementById('count01').value = "no. ones = " + ones + "\tno. zeros = " + zeros;
 }
+
+
+// var element = document.getElementById("form");
+document.addEventListener("keypress", function(event) {
+	 if (event.key === "Enter") {
+		runTest();
+     }
+});
 
   
