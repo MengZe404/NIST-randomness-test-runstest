@@ -39,5 +39,10 @@ function createComponent(text) {
     div.appendChild(node1)
     div.appendChild(node2)
 
+    node1.addEventListener("click", ()=>{
+        navigator.clipboard.writeText(input);
+        alert("Copied")
+    })
+
     return div;
 }

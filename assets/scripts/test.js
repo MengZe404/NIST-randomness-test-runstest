@@ -10,21 +10,25 @@ function runTest(test) {
     }
 
     if (testSuit.n != limit) {
-        alert("Error: input must have 50 digits");
+        alert("Error: input must have " + limit +  " digits");
         return 0;
     }
 
-    console.log
+    runsResult = document.getElementById("runsP")
+    freqResult = document.getElementById("freqP")
+    csumResult = document.getElementById("csumP")
+    DFTResult = document.getElementById("DFTP")
+    templateResult = document.getElementById("templateP")
 
     if (test == "runsTest") {
         var Pvalue = testSuit.runsTest();
-        document.getElementById("runsP").value = Pvalue
+        runsResult.value = Pvalue
     } else if (test == "freqTest") {
         var Pvalue = testSuit.freqTest();
-        document.getElementById("freqP").value = Pvalue
+        freqResult.value = Pvalue
     } else if (test == "csumTest") {
         var Pvalue = testSuit.csumTest();
-        document.getElementById("csumP").value = Pvalue
+        csumResult.value = Pvalue
     } else { // run all
         var runsP = testSuit.runsTest();
         var freqP = testSuit.freqTest();
@@ -32,11 +36,17 @@ function runTest(test) {
         var csumP = testSuit.csumTest();
         var templateP = testSuit.templateTest();
 
-        document.getElementById("runsP").value = runsP
-        document.getElementById("freqP").value = freqP;
-        document.getElementById("DFTP").value = DFTP;
-        document.getElementById("csumP").value = csumP;
-        document.getElementById("templateP").value = templateP;
+        var resultFields = [runsResult, freqResult, csumResult, DFTResult, templateResult]
+        var pvalues = [runsP, freqP, DFTP, csumP, templateP]
+
+        for (i = 0; i < pvalues.length; i++) {
+            resultFields[i].value = pvalues[i]
+            if (pvalues[i] >= 0.05) {
+                resultFields[i].style.background = '#70e46c';
+            } else {
+                resultFields[i].style.background = '#f29493';
+            }
+        }
 
         var Pvalue = runsP.toFixed(3) + ", " + freqP.toFixed(3) + ", " + DFTP.toFixed(3) + ", " + csumP.toFixed(3) + ", " + templateP.toFixed(3)
     }
