@@ -39,14 +39,20 @@ function runTest(test) {
         var resultFields = [runsResult, freqResult, csumResult, DFTResult, templateResult]
         var pvalues = [runsP, freqP, DFTP, csumP, templateP]
 
+        var total = 0;
+
         for (i = 0; i < pvalues.length; i++) {
             resultFields[i].value = pvalues[i]
-            if (pvalues[i] >= 0.05) {
+            if (pvalues[i] >= 0.01) {
                 resultFields[i].style.background = '#70e46c';
             } else {
                 resultFields[i].style.background = '#f29493';
             }
+            total += pvalues[i]
         }
+
+        var average = total / pvalues.length
+        document.getElementById("average").value = average
 
         var Pvalue = runsP.toFixed(3) + ", " + freqP.toFixed(3) + ", " + DFTP.toFixed(3) + ", " + csumP.toFixed(3) + ", " + templateP.toFixed(3)
     }
