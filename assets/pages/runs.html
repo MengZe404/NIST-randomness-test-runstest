@@ -20,7 +20,7 @@
   <a href="https://www.nottingham.edu.my/"> <img src="../full-logo.jpg" class="logo"> </a>
   <h1>2023 STEM Carnival, University of Nottingham Malaysia</h1>
   <br>
-  <h1> Runs Test </h1>
+  <h1 style="font-weight: bold;"> Runs Test </h1>
   <form class="cf">
     <div class="cf">
       <textarea name="message" type="text" id="input" placeholder="010011011000110111001111000111011 ... (50 digits)"
@@ -38,15 +38,25 @@
     <input value="Test" type="button" id="input-submit" onclick="runTest('runsTest')">
     <br> <br>
 
-    <div class="half left cf">
+    <div class="cf">
       <h3> P-value</h3>
       <input type="text" id="runsP" value="0" readonly>
     </div>
 
+    <br>
+
+    <div class="half left cf">
+      <h3> Previous </h3>
+      <a href="frequency.html" style="text-decoration: none;">
+        <input type="text" value="Frequency Test" style="cursor: pointer; text-align: center;" readonly>
+      </a>
+    </div>
+
+
     <div class="half right cf">
       <h3> Next </h3>
       <a href="csum.html" style="text-decoration: none;">
-        <input value="Csum Test" type="button" style="background: #18B3C3; color: white;">
+        <input type="text" value="Csum Test" style="cursor: pointer; text-align: center;" readonly>
       </a>
     </div>
 

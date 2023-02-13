@@ -43,7 +43,7 @@ function runTest(test) {
 
         for (i = 0; i < pvalues.length; i++) {
             resultFields[i].value = pvalues[i]
-            if (pvalues[i] >= 0.01) {
+            if (pvalues[i] >= 0.05) {
                 resultFields[i].style.background = '#70e46c';
             } else {
                 resultFields[i].style.background = '#f29493';
